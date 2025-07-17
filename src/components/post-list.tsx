@@ -226,13 +226,14 @@ export default function PostList() {
                   <div className="aspect-[3/2] relative overflow-hidden">
                     <Image
                       src={`/api/image-proxy?url=${encodeURIComponent(
-                        post.image
+                        post.small_image
                       )}`}
                       alt={post.title}
                       fill
                       className="object-cover hover:scale-105 transition-transform duration-300"
                       sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 25vw"
                       priority
+                      unoptimized
                     />
                   </div>
 

@@ -154,20 +154,8 @@ export function transformApiPost(apiPost: ApiPost): Post {
     title: apiPost.title,
     content: apiPost.content,
     publishedAt: new Date(apiPost.published_at),
-    image:
-      Array.isArray(apiPost.small_image) &&
-      apiPost.small_image.length > 0 &&
-      apiPost.small_image[0].url
-        ? apiPost.small_image[0].url
-        : Array.isArray(apiPost.medium_image) &&
-          apiPost.medium_image.length > 0 &&
-          apiPost.medium_image[0].url
-        ? apiPost.medium_image[0].url
-        : "/placeholder.svg?height=200&width=300",
-    mediumImage: getImageUrl(
-      apiPost.medium_image,
-      "/placeholder.svg?height=200&width=300"
-    ),
+    small_image: apiPost.small_image[0]?.url ?? "", // <-- ambil url saja
+    mediumImage: apiPost.medium_image[0]?.url ?? "",
   };
 }
 

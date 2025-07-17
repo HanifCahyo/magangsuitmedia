@@ -55,6 +55,6 @@ export interface Post {
   title: string;
   content: string;
   publishedAt: Date;
-  image: string;
+  small_image: string;
   mediumImage: string;
 }
